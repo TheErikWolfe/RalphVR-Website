@@ -8,3 +8,10 @@ nav {
 footer {
     background-color: black;
 }
+h1 {
+    font-size: 8vh;
+}
+
+.border-bottom {
+    border-color: #C8C642 !important;
+}
