@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Exo');
 
+@font-face {
+    font-family: 'LeagueSpartan-Bold';
+    src: url(LeagueSpartan-Bold.otf) format("opentype");
+}
+
 body {
+    font-family: 'LeagueSpartan-Bold';
     background-color: #083340;
     color: #C8C642;
 }
@@ -15,6 +21,9 @@ h1 {
     font-size: 8vh;
 }
 
+.navbar{
+  font-family: 'Exo', sans-serif;
+}
 .border-bottom {
     border-color: #C8C642 !important;
 }
