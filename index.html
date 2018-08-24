@@ -5,49 +5,81 @@
 		<title>RalphVR</title>
 		<link rel="shortcut icon" href="https://png.icons8.com/cotton/50/000000/space-shuttle.png" />
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="styles/main.css">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	</head>
 	<body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
+        <div id="main" v-bind:class="backgroundColor">
+            <nav class="navbar fixed-top justify-content-end navbar-light" v-bind:class="navColor">
+                <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class=""><i class="mr-1 fas fa-ellipsis-v"></i>Info</span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown text-right">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Blah
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="">
+                <img class="img-fluid" v-bind:src="robotImage" alt="">
             </div>
-        </nav>
-        <div class="container">
-            <h1>Hello World</h1>
+            <div class="container">
+                <div class="d-flex border-bottom pt-3 pb-5 mb-5">
+                    <h1 v-bind:class="textColor">Ralph VR</h1>
+                    <h3 v-bind:class="textColor" class="ml-2">VR games and a goldfish CEO</h3>
+                </div>
+                <div id="section-games mt-5">
+                    <h2 v-bind:class="textColor" class="my-5">Games</h2>
+                    <div class="card">
+                        <img class="card-img" src="./images/GameImage_DaydreamBlue.jpg" alt=""/>
+                    </div>
+                </div>
+                <div id="section-about" class="my-5 pb-5">
+                    <h2 v-bind:class="textColor">About</h2>
+                    <p v-bind:class="textColor">A couple of paragraphs about the game studio and its origins. Mostly an absurd story about tRalphj the award winning artist and goldfish that now helms the studio.</p>
+                </div>
+            </div>
+            <div id="section-copyright" class="text-right mb-5 mr-2">
+                <h5 v-bind:class="textColor">©RalphVR Inc, 2018</h5>
+            </div>
+            <footer class="text-light align-bottom">
+                <div class="container pb-5">
+                    <div class="row pt-5">
+                        <h6 class="p-1">Options</h6>
+                    </div>
+                    <div class="row pt-3">
+                        <h6 class="p-1">Color Palette</h6>
+                        <h6 class="p-1 text-secondary"><</h6>
+                        <div v-on:click="robotImage = './images/RichieHeaderYellow-01.png', backgroundColor = 'bkgd-color-blue', navColor = 'nav-yellow', textColor = 'text-yellow'"><a id="palette-1" class="p-1 text-warning">1</a></div>
+                        <div v-on:click="robotImage = './images/RichieHeaderGrey-02.png', backgroundColor = 'bkgd-color-grey', navColor = 'nav-light', textColor = 'text-light'"><a id="palette-2" class="p-1 text-secondary">2</a></div>
+                        <div v-on:click="robotImage = './images/RichieHeaderDenim-03.png', backgroundColor = 'bkgd-color-plaid', navColor = 'nav-denim', textColor = 'text-light'"><a id="palette-3" class="p-1 text-secondary">3</a></div>
+                        <h6 class="p-1 text-secondary">></h6>
+                    </div>
+                    <div class="row pt-1">
+                        <h6 class="p-1">Audio</h6>
+                        <h6 id="audio-on" class="p-1 text-secondary">On</h6>
+                        <h6 id="audio-off" class="p-1 text-warning">Off</h6>
+                    </div>
+                    <div class="row pt-1">
+                        <h6 class="p-1">Gif it up</h6>
+                        <h6 id="gif-on" class="p-1 text-secondary">On</h6>
+                        <h6 id="gif-off" class="p-1 text-warning">Off</h6>
+                    </div>
+                </div>
+            </footer>
         </div>
-        
+
 
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	    <script src="main.js"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 	</body>
 </html>
