@@ -8,10 +8,10 @@
 body {
     font-family: 'LeagueSpartan-Bold';
     /* color: #C8C642; */
-    
+
 }
 nav {
-    
+
 }
 footer {
     background-color: black;
@@ -37,8 +37,9 @@ h1 {
 }
 
 .bkgd-color-plaid {
-
+    background-image: url("../images/flannel_repeating.jpg");
 }
+
 .nav-yellow {
     background-color: #C8C642;
 }
